@@ -9,7 +9,7 @@ The Broadleaf installation has the following steps:
 7. Start the Demo Site
 8. Import and Build Broadleaf Core
 
-## 1 Install Java 8.0
+## 1. Install Java 8.0
 1.	Download the Java file.
 `jdk-8uversion-macosx-x64.dmg` from Oracle Java website.
 Before the file can be downloaded, you must accept the license agreement.
@@ -50,7 +50,7 @@ You should see something like the following:
 
 > Java HotSpot(TM) 64-Bit Server VM (build 25.92-b14, mixed mode)
 
-## 2 Install Maven
+## 2. Install Maven
 1.	download the maven file
 `apache-maven-3.3.9-bin.tar.gz` from Apache Maven site  https://maven.apache.org/download.cgi
 2.	extract `apache-maven-3.3.9-bin.tar.gz` to directories ,for example : ``/Users/MyUsername/apache-maven-3.3.9`
@@ -64,7 +64,7 @@ $ source ~/.bash_profile
 $ mvn –v
 ```
 
-## 3 Download Broadleaf
+## 3. Download Broadleaf
 Broadleaf changed its license after version 5.0. Therefore we use version 4.0.5-GA.
 1. Download Broadleaf core source code and unzip it to your project folder. https://github.com/BroadleafCommerce/BroadleafCommerce/releases/tag/broadleaf-4.0.5-GA
 2. Download Broadleaf demo site source code and unzip it to your project folder. https://github.com/BroadleafCommerce/DemoSite/releases/tag/broadleaf-4.0.5-GA
@@ -73,11 +73,11 @@ Broadleaf changed its license after version 5.0. Therefore we use version 4.0.5-
 Download and install Spring Tool Suite from https://spring.io/tools.
 
 ## 5. Import and Build Broadleaf
-### 5.1 Preparation
+### 5.1. Preparation
 1. Create a new directory and start STS using the newly created directory as its workspace directory.
 2. Unzip the two Broadleaf project files into the workspace directory.
 
-### 5.2 Import DemoSite-broadleaf-4.0.5-GA
+### 5.2. Import DemoSite-broadleaf-4.0.5-GA
 
 ![p1](images/Picture1.png)
 
@@ -105,7 +105,7 @@ You should have 4 projects in your installation:
 3.	core - common module shared between the site and admin projects, used for common utilities, services, database tables, etc
 4.	site - the demosite frontend. Contains all of the styling and user interactions  
 
-### 5.3 Build DemoSite-broadleaf-4.0.5-GA
+### 5.3. Build DemoSite-broadleaf-4.0.5-GA
 Now that the project is imported, right-click on the root project (DemoSite-broadleaf-4.0.5-GA) and go to Runas -> Maven -> Install
 
 ![p6](images/Picture6.png)
@@ -114,7 +114,7 @@ this will fully compile and build the demosite application. Once this is complet
 
 ![p7](images/Picture7.png)
 
-### 5.4 Select the Working Set View
+### 5.4. Select the Working Set View
 First, From the `view menu` dropdown list, click `Select Working Set...`
 
 ![p8](images/Picture8.png)
@@ -139,7 +139,7 @@ Now the `Package Explorer` should look like the following:
 
 ![p13](images/Picture13.png)
 
-### 5.5 Add Ant Build Tasks
+### 5.5. Add Ant Build Tasks
 First, add an ant build view.
 
 ![p14](images/Picture14.png)
@@ -161,7 +161,7 @@ In `DemoSite-broadleaf-4.0.5-GA` project, open `build.properties` file and confi
 ## 6. Switch to MySQL
 A very common step that users may want to do is switch away from the bundled HSQL database to a more mature database such as MySQL. Download and install MySQL Database (http://dev.mysql.com/downloads/mysql/)
 
-### 6.1 MySql Settings
+### 6.1. MySql Settings
 For proper UTF8 configuration and easy of use across multiple platforms (Linux, MySQL, Windows) we also recommend these minimum settings in my.cnf:
 
 > [mysqld]
@@ -172,14 +172,14 @@ For proper UTF8 configuration and easy of use across multiple platforms (Linux, 
 
 > collation-server=utf8_general_ci
 
-### 6.2 Create database
+### 6.2. Create database
 
 Create a new database named broadleaf and a user capable of accessing this database with privileges for creating tables.
 ```sql
 CREATE DATABASE IF NOT EXISTS broadleaf DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 ```
 
-### 6.3 Use MySQL
+### 6.3. Use MySQL
 In your root `pom.xml`, find the following in the `<dependencies>` section under the `<plugin>` with `<groupId>org.apache.tomcat.maven</groupId>`
 
 ```xml
@@ -202,7 +202,7 @@ and replace it with
 </dependency>
 ```
 
-### 6.4 Config MySql dialect
+### 6.4. Config MySql dialect
 In `core/src/main/resources/runtime-properties/common-shared.properties`, you need to update the three persistence unit dialects:
 
 >blPU.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
@@ -211,7 +211,7 @@ In `core/src/main/resources/runtime-properties/common-shared.properties`, you ne
 
 >blCMSStorage.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
 
-### 6.5 Use MySql Database
+### 6.5. Use MySql Database
 In build.properties, you have the following setup:
 
 > \# your local database username, just a user that has readwrite permissions
@@ -229,7 +229,7 @@ In build.properties, you have the following setup:
 Note: `database.driver` and `database.url` have been changed from HSQLDB to MySQL.
 Here the database name is `broadleaf`, make sure you use your database name in the url.
 
-### 6.6 Remove the HSQL dependency
+### 6.6. Remove the HSQL dependency
 Remove the HSQL dependency from the site ant targets. In your `site/build.xml` file replace
 
 ```xml
@@ -250,24 +250,24 @@ with
 ```
 And that's it! You should now be up and running with MySQL.
 
-## 7 Start the Demo Site
+## 7. Start the Demo Site
 This is the easiest part.
-### 7.1 Start the client
+### 7.1. Start the client
 Start the client front end by clicking site `tomcat` ant task.
 Once this has finished executing, you should be able to see it by going to http://localhost:8080 in your browser.
 
-### 7.2 Start the Admin
+### 7.2. Start the Admin
 Start the admin front end by clicking admin `tomcat` ant task
 Once this has finished, load the admin by going to http://localhost:8081/admin in your browser. The username/password is admin/admin
 
-## 8 Import and Build Broadleaf Core
+## 8. Import and Build Broadleaf Core
 
-### 8.1 Import and Build Broadleaf core
+### 8.1. Import and Build Broadleaf core
 Similar to import and build the demo site, import and build `BroadleafCommerce-broadleaf-4.0.5-GA`. When it is done, we have the following view:
 
 ![p19](images/Picture19.png)
 
-### 8.2 Configure Remote Debug
+### 8.2. Configure Remote Debug
 In debug Configurations window, new-> java remote application.
 
 ![p20](images/Picture20.png)
