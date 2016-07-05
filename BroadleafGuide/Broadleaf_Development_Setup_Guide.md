@@ -1,5 +1,6 @@
 # Broadleaf Development Setup Guide
 The Broadleaf installation has the following steps:
+
 1. Install Java 8.0
 2. Install Maven
 3. Download Broadleaf
