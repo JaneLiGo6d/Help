@@ -68,14 +68,16 @@ its workspace directory.
 2. Unzip the two Broadleaf project files into the workspace directory.
 3. import DemoSite-broadleaf-4.0.5-GA
 
-![p1](/images/Picture1.png)
+![p1](images/Picture1.png)
 
-![p2](/images/Picture2.png)
+![p2](images/Picture2.png)
 
 click next and in the box for "Root Directory" enter the path to the
 directory that you saved your DemoSite-broadleaf-4.0.5-GA to on
 your filesystem, or hit the "Browse..." button next to the input box to
 browse for the location. After you do that, you should now see 4 different
 projects pop up:
-![p3](/images/Picture3.png)
+
+![p3](images/Picture3.png)
+
 Note that there is a checkbox for "Add project(s) to working set" and the value is defaulted to `ecommerce-website`. Working sets will become important later, but we can leave this like it is for now.
