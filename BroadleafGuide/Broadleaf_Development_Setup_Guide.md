@@ -31,9 +31,12 @@ $ touch .bash_profile
 $ vi .bash_profile
 ```
 Add the following conents to the .bash_profile:
-> export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home'
-> export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME
-> export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+
+```bash
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home'
+export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME
+export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+```
 
 Test your Java installation:
 ```bash
@@ -42,7 +45,9 @@ $ java –version
 ```
 You should see something like the following:
 > java version "1.8.0_92"
+
 > Java(TM) SE Runtime Environment (build 1.8.0_92-b14)
+
 > Java HotSpot(TM) 64-Bit Server VM (build 25.92-b14, mixed mode)
 
 ## 2 Install Maven
